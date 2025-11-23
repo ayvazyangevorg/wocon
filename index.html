@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Wocon - Grok Themed Chat</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
-  <div class="space-bg"></div>
-  <div id="app" class="chat-card">
-    <h1 class="grok-title">wocon 🚀</h1>
-    <div id="auth">
-      <button id="anLogin" class="grok-btn">Sign in Anonymously</button>
-      <button id="gmailLogin" class="grok-btn">Sign in with Gmail</button>
-    </div>
-    <div id="chat" style="display:none;">
-      <div id="user" class="grok-label"></div>
-      <div id="messages"></div>
-      <form id="msgform">
-        <input type="text" id="msgInput" placeholder="Type a message..." required autocomplete="off"/>
-        <button class="grok-btn">Send</button>
-      </form>
-      <button id="logout" class="grok-btn">Logout</button>
-    </div>
+  <div id="app">
+    <header class="grok-title">
+      Wocon Chat
+    </header>
+    <main class="main-section">
+      <section id="auth" class="auth-panel">
+        <h2>Sign in to Chat</h2>
+        <button id="anLogin" class="grok-btn">Anonymous Login</button>
+        <button id="gmailLogin" class="grok-btn">Gmail Login</button>
+      </section>
+      <section id="chat" style="display:none;" class="chat-panel">
+        <div id="user"></div>
+        <div id="messages"></div>
+        <form id="msgform" autocomplete="off">
+          <input type="text" id="msgInput" placeholder="Type a message..." required autocomplete="off" />
+          <button type="submit" class="grok-btn">Send</button>
+          <button id="logout" type="button" class="grok-btn">Logout</button>
+        </form>
+      </section>
+    </main>
   </div>
   <script src="main.js"></script>
 </body>
