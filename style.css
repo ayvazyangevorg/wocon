@@ -1,0 +1,70 @@
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background: #111;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Starry space background */
+.space-bg { 
+  position:fixed; left:0;top:0;width:100vw;height:100vh;z-index:-1; 
+  background: radial-gradient(circle at 20% 40%, #fff2 2px, transparent 4px),
+              radial-gradient(circle at 60% 70%, #fff5 1px, transparent 3px),
+              radial-gradient(circle at 83% 83%, #fff6 2px, transparent 5px),
+              #111; 
+  background-repeat: no-repeat;
+}
+
+/* Chat card */
+.chat-card {
+  background: rgba(25,25,25,0.9);
+  margin:auto; padding:2em 2em 1em 2em;
+  border-radius:1.5em;
+  box-shadow: 0 0 30px #000a, 0 0 80px #fff1 inset;
+  width: min(420px, 90vw);
+  position:relative; top:8vh;
+}
+
+.grok-title { 
+  font-size: 2.5em; text-align: center;
+  font-family: 'Orbitron', 'Courier New', monospace;
+  letter-spacing: 0.2em;
+}
+
+.grok-btn {
+  background: #222; color: #fff;
+  border: 2px solid #fff;
+  border-radius:1em; 
+  padding: 0.5em 1.2em; margin: 0.3em;
+  cursor:pointer; box-shadow: 0 0 5px #fff3;
+  font-family: inherit;
+  font-size: 1em;
+  transition: background 0.3s, color 0.3s;
+}
+.grok-btn:hover { background: #fff; color: #111; }
+
+.grok-label {
+  font-size:0.95em; margin-bottom:0.2em; text-align:center;color:#aaa
+}
+
+#messages {
+  min-height: 300px; max-height: 40vh; overflow-y: auto;
+  margin-bottom: 1em;
+  background: #191919;
+  padding: 1em; border-radius:0.8em; box-shadow: 0 0 8px #fff2 inset;
+}
+
+.msg { margin: 0.5em 0; }
+.own { color: #9dfcfa; text-align:right;}
+.other { color: #fff; text-align:left;}
+.time { font-size:0.7em; color: #888; margin-left:0.8em;}
+
+#msgInput {
+  width: 70%; padding:0.5em;font-size:1em;
+  border-radius:0.7em; border:none; margin-right:0.5em;
+  background:#eee;color:#111;
+}
+#msgform { display:flex; align-items:center;}
+#logout { margin-top: 0.6em; background:#ff3a3a;}
