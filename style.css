@@ -1,82 +1,90 @@
-/* Reset and Base styles */
+/* Fullscreen, mature, wide chat UI with clean styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
-  background: #18191A;
+  background: #181a20;
   color: #F3F3F3;
   min-height: 100vh;
   height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
-/* Center the chat card */
+/* App wrapper is now fullscreen and wide */
 #app {
-  max-width: 440px;
-  margin: 48px auto 0 auto;
-  background: #212325;
-  border-radius: 12px;
-  box-shadow: 0 2px 18px rgba(12,16,22,0.14);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #21252b;
+  box-shadow: none;
+  border-radius: 0;
   padding: 0;
   overflow: hidden;
 }
 
-/* Title styles */
+/* Top bar */
 .grok-title {
-  font-size: 2.1em;
-  text-align: left;
-  padding: 24px 32px 8px 32px;
-  margin: 0;
+  font-size: 2.2em;
   font-weight: 600;
-  letter-spacing: 1px;
-  color: #ededed;
-  border-bottom: 1px solid #232729;
+  padding: 32px 48px 20px 48px;
+  margin: 0;
+  color: #ebede8;
+  border-bottom: 1px solid #1f2228;
+  background: #202328;
+  letter-spacing: 1.2px;
 }
 
 /* Auth section */
 #auth {
-  padding: 24px 32px 24px 32px;
+  padding: 60px 48px 32px 48px;
   text-align: center;
 }
 
-/* Chat area */
+/* Main chat area */
 #chat {
-  min-height: 460px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  padding: 24px 32px 8px 32px;
+  padding: 0 0 32px 0;
+  height: 100%;
 }
 
+/* User info, right corner */
 #user {
   font-size: 1em;
   color: #9298A0;
-  margin-bottom: 8px;
+  margin: 20px 48px 6px 0;
   text-align: right;
 }
 
-/* Messages box */
+/* Message list container -- wide, tall */
 #messages {
-  flex: 1;
-  min-height: 320px;
-  max-height: 350px;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  min-height: 420px;
+  max-height: calc(100vh - 240px);
   overflow-y: auto;
-  background: #222227;
-  border-radius: 7px;
-  padding: 14px 14px 8px 14px;
-  margin-bottom: 16px;
+  background: #23262a;
+  border-radius: 12px;
+  padding: 32px 30px 18px 30px;
   box-sizing: border-box;
-  border: 1px solid #292B2E;
+  border: 1px solid #292b2f;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s;
 }
 
-/* Individual Message Styles */
+/* Message styles, grouped clearly, NO emojis or stickers */
 .msg {
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #27292C;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #25272c;
 }
 
 .msg:last-child {
@@ -87,15 +95,15 @@ body, html {
 .own {
   align-items: flex-end;
 }
-
 .other {
   align-items: flex-start;
 }
 
 .msg b {
-  font-size: 0.97em;
-  font-weight: 500;
-  color: #D1D5DB;
+  font-size: 1em;
+  font-weight: 600;
+  color: #b9d5e3;
+  letter-spacing: 0.5px;
 }
 
 .own b {
@@ -107,35 +115,39 @@ body, html {
 }
 
 .msg .text {
-  margin: 2px 0 0 0;
-  font-size: 1.06em;
+  margin: 7px 0 0 0;
+  font-size: 1.08em;
   word-break: break-word;
-  color: #ebecec;
+  color: #e9eaea;
+  text-align: left;
 }
 
 .msg .time {
-  font-size: 0.82em;
-  color: #6D7682;
+  font-size: 0.9em;
+  color: #767981;
   text-align: right;
-  margin-top: 2px;
+  margin-top: 8px;
 }
 
-/* Chat form */
+/* Chat form fixes - at bottom, wide */
 #msgform {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-top: 6px;
+  gap: 14px;
+  padding: 0 0 0 0;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 #msgInput {
   flex: 1 1 auto;
   font-size: 1em;
-  padding: 9px 15px;
+  padding: 13px 20px;
   background: #181A1D;
   color: #F3F3F3;
-  border: 1px solid #292B2E;
-  border-radius: 6px;
+  border: 1.5px solid #292B2E;
+  border-radius: 7px;
   outline: none;
   transition: border-color 0.14s;
 }
@@ -148,14 +160,15 @@ body, html {
   background: #232729;
   color: #ededed;
   border: 1px solid #313436;
-  border-radius: 6px;
-  padding: 9px 18px;
+  border-radius: 7px;
+  padding: 11px 24px;
   font-size: 1em;
   font-family: inherit;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
   outline: none;
+  margin: 0 5px;
 }
 
 .grok-btn:hover, .grok-btn:focus {
@@ -166,7 +179,7 @@ body, html {
 
 /* Logout button specific style */
 #logout {
-  margin: 16px 0 0 0;
+  margin-left: 10px;
   background: #26272A;
   color: #E45F5F;
   border-color: #3A1B1B;
@@ -176,4 +189,19 @@ body, html {
   background: #3A1B1B;
   color: #fff;
   border-color: #E45F5F;
+}
+
+/* Responsive and scroll */
+@media (max-width: 1100px) {
+  #messages, #msgform {
+    max-width: 98vw;
+  }
+  .grok-title {
+    padding-left: 18px; padding-right: 18px;
+  }
+}
+
+/* Remove emoji/sticker classes if exist */
+.sticker, .emoji {
+  display: none !important; /* Ensures nothing emoji/sticker-like renders */
 }
